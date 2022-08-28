@@ -41,12 +41,13 @@ public class Main extends Application {
 
 
 
-
+       //creates the button
         Button checkPhoneNumberButton = new Button("Check Phone Number");
+        //this is the action when the button is pressed
         checkPhoneNumberButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-
+                //if statement searching database for phone#
 
             }
         });
@@ -60,7 +61,7 @@ public class Main extends Application {
 
 
 
-
+        //adds the stage/scene and runs
         stage.setScene(myScene);
         stage.show();
 
