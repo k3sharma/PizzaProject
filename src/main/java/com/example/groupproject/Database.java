@@ -1,4 +1,4 @@
-package com.project;
+package com.example.groupproject;
 
 import java.sql.*;
 import java.util.Scanner;
@@ -166,12 +166,14 @@ public class Database {
                 String expiration = sc.next();
                 int cvvCode = sc.nextInt();
 
+                PreparedStatement preparedStatement;
                 String sql = "INSERT INTO CARD (CardNumber, CardExp, CardCVV) VALUES (?, ?, ?) WHERE PhoneNumber = ?";
+                preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setLong(1, cardNumber);
                 //Stop point
 
             } catch (SQLException e) {
-                e.printStackTrace;
+                e.printStackTrace(System.out);
             }
     }
 
