@@ -12,7 +12,7 @@ public class Database {
         String input = sc.nextLine();
         input = input.replaceAll("[\\s()-]", "");
         long customerPhoneNumber = Long.parseLong(input);
-        return customerPhoneNumber
+        return customerPhoneNumber;
     }
     public void addCustomer(/*eventually input row values here*/) {
 
