@@ -1,10 +1,9 @@
-package com.example.groupproject;
+package com.example.Controllers;
 
 import javafx.fxml.FXML;
-import javafx.event.ActionEvent;
 import javafx.scene.control.Label;
 
-public class GroupProjectController {
+public class ManagerController {
     @FXML
     private Label welcomeText;
 
