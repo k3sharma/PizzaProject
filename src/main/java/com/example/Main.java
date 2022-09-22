@@ -1,27 +1,49 @@
-package com.example.groupproject;
+package com.example;
 
-import java.sql.*;
-import java.util.Scanner;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
-    String databaseURL = "jdbc:ucanaccess://C:/Users//baile//OneDrive - Kennesaw State University//Fall 2022//SWE//demo//SWE Project.accdb";
+    public void start(Stage stage) throws IOException {
+        stage.setTitle("Pizza Project");
+
+        Parent startingRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/StartingView.fxml"));
+        Scene startingView = new Scene(startingRoot);
+
+        Parent employeeRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/EmployeeView.fxml"));
+        Scene employeeView = new Scene(employeeRoot);
+
+        Parent managerRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/ManagerView.fxml"));
+        Scene managerView = new Scene(managerRoot);
+
+
+        stage.setScene(startingView);
+        stage.show();
+    }
 
 
 
+
+
+
+
+
+
+
+
+    public static void main(String[] args) {
+        launch();
+    }
+/* might be useful later
     @Override
     public void start(Stage stage) throws IOException {
+    String databaseURL = "jdbc:ucanaccess://C:/Users//baile//OneDrive - Kennesaw State University//Fall 2022//SWE//demo//SWE Project.accdb";
         GridPane myGrid = new GridPane();
         Scene myScene = new Scene(myGrid,400,300);
 
@@ -99,8 +121,6 @@ public class Main extends Application {
 
 
     }
+*/
 
-    public static void main(String[] args) {
-        launch();
-    }
 }
