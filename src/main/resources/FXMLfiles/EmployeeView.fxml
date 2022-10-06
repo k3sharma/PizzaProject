@@ -2,39 +2,20 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.EmployeeController">
    <children>
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <Label layoutX="256.0" layoutY="27.0" text="Employee Sign-in" />
-      <Label layoutX="78.0" layoutY="107.0" text="Username:" />
-      <Label layoutX="78.0" layoutY="215.0" text="Password:" />
-      <TextField layoutX="143.0" layoutY="103.0" />
-      <TextField layoutX="143.0" layoutY="211.0" />
-      <Button layoutX="418.0" layoutY="160.0" mnemonicParsing="false" text="Sign-in" />
+      <Label layoutX="243.0" layoutY="45.0" text="Employee Login Page" />
+      <Label layoutX="218.0" layoutY="123.0" text="Username:" />
+      <Label layoutX="218.0" layoutY="192.0" text="Password:" />
+      <TextField layoutX="283.0" layoutY="119.0" />
+      <TextField layoutX="283.0" layoutY="188.0" />
+      <Button layoutX="184.0" layoutY="274.0" mnemonicParsing="false" text="Submit" />
+      <Button layoutY="2.0" mnemonicParsing="false" text="Home" />
+      <Button layoutX="540.0" layoutY="2.0" mnemonicParsing="false" text="Back" />
+      <Button layoutX="548.0" layoutY="375.0" mnemonicParsing="false" text="Help" />
+      <Button layoutX="332.0" layoutY="274.0" mnemonicParsing="false" text="Cancel" />
    </children>
 </AnchorPane>
