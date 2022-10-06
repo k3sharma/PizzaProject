@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.OrderController">
+   <children>
+      <Label layoutX="21.0" layoutY="16.0" text="What Toppings?" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="33.0" layoutY="22.0" prefHeight="103.0" prefWidth="106.0" text="3+ Toppings and extra Toppings will be +$0.50 each" wrapText="true" />
+      <Label layoutX="168.0" layoutY="22.0" text="Type of Cheese" />
+      <Label layoutX="286.0" layoutY="22.0" text="Meats" />
+      <Label layoutX="403.0" layoutY="22.0" text="Veggies" />
+      <Label layoutX="499.0" layoutY="22.0" text="More Veggies" />
+      <RadioButton layoutX="165.0" layoutY="57.0" mnemonicParsing="false" text="Mozzarella" />
+      <RadioButton layoutX="165.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="168.0" layoutY="125.0" mnemonicParsing="false" text="Cheddar" />
+      <RadioButton layoutX="168.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="168.0" layoutY="183.0" mnemonicParsing="false" text="Provolone" />
+      <RadioButton layoutX="168.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="168.0" layoutY="243.0" mnemonicParsing="false" text="Parmesan" />
+      <RadioButton layoutX="168.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="263.0" layoutY="57.0" mnemonicParsing="false" text="Pepperoni" />
+      <RadioButton layoutX="263.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="263.0" layoutY="125.0" mnemonicParsing="false" text="Ham" />
+      <RadioButton layoutX="263.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="263.0" layoutY="183.0" mnemonicParsing="false" text="Bacon" />
+      <RadioButton layoutX="263.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="261.0" layoutY="243.0" mnemonicParsing="false" text="Beef" />
+      <RadioButton layoutX="261.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="57.0" mnemonicParsing="false" text="Onion" />
+      <RadioButton layoutX="385.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="125.0" mnemonicParsing="false" text="Bell Pepper" />
+      <RadioButton layoutX="385.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="183.0" mnemonicParsing="false" text="Spinach" />
+      <RadioButton layoutX="385.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="243.0" mnemonicParsing="false" text="Tomato" />
+      <RadioButton layoutX="385.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="499.0" layoutY="57.0" mnemonicParsing="false" text="Mushrooms" />
+      <RadioButton layoutX="499.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="497.0" layoutY="125.0" mnemonicParsing="false" text="Banana Peppers" />
+      <RadioButton layoutX="497.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="293.0" mnemonicParsing="false" text="Pineapple" />
+      <RadioButton layoutX="385.0" layoutY="310.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="385.0" layoutY="342.0" mnemonicParsing="false" text="Black Olives" />
+      <RadioButton layoutX="385.0" layoutY="359.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="497.0" layoutY="183.0" mnemonicParsing="false" text="Jalapenos" />
+      <RadioButton layoutX="497.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="261.0" layoutY="293.0" mnemonicParsing="false" text="Chicken" />
+      <RadioButton layoutX="261.0" layoutY="310.0" mnemonicParsing="false" text="Extra" />
+      <RadioButton layoutX="261.0" layoutY="342.0" mnemonicParsing="false" text="Philiy Steak" />
+      <RadioButton layoutX="261.0" layoutY="359.0" mnemonicParsing="false" text="Extra" />
+   </children>
+</AnchorPane>

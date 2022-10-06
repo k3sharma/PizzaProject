@@ -11,15 +11,16 @@ import java.io.IOException;
 public class Main extends Application {
 
     public void start(Stage stage) throws IOException {
+
         stage.setTitle("Pizza Project");
 
-        Parent startingRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/StartingView.fxml"));
+        Parent startingRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/StartingView.fxml"));
         Scene startingView = new Scene(startingRoot);
 
-        Parent employeeRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/EmployeeView.fxml"));
+        Parent employeeRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/EmployeeView.fxml"));
         Scene employeeView = new Scene(employeeRoot);
 
-        Parent managerRoot = FXMLLoader.load(getClass().getResource("ProjectFiles/Controllers/ManagerView.fxml"));
+        Parent managerRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/ManagerView.fxml"));
         Scene managerView = new Scene(managerRoot);
 
 
