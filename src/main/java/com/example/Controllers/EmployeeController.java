@@ -36,34 +36,58 @@ public class EmployeeController {
         stage.setScene(scene);
         stage.show();
     }
-    public void testUsernamePassword(){
-        String databaseURL ="PizzaProject/SWE Project.accdb";
-        try (Connection connection = DriverManager.getConnection(databaseURL)) {
-            PreparedStatement myStatement;
-            String SQLQuery="SELECT * FROM EmployeeCredentials WHERE EmployeeID = ? AND Password = ?";
-            myStatement = connection.prepareStatement(SQLQuery);
-            myStatement.setString(1,IDTextField.getText());
-            myStatement.setString(2, passwordTextField.getText());
-            ResultSet myRS = myStatement.executeQuery();
-            String EmpID = myRS.getString("EmployeeID");
-            String EmpPassword = myRS.getString("Password");
 
+    public void checkIfInt(){
 
-
-
-
-
-        } catch (SQLException e) {
-        e.printStackTrace();
+    }
+    public static boolean isInteger(String s) {
+        try {
+            Integer.parseInt(s);
+        } catch(NumberFormatException e) {
+            return false;
+        } catch(NullPointerException e) {
+            return false;
+        }
+        // only got here if we didn't return false
+        return true;
     }
 
+    public void testUsernamePassword(){
 
-
-        if(employeeLoginLabel.getText().equals("")){
-            warningLabel.setText("testSuccessful");
+        if(isInteger((IDTextField.getText()))==true){
+            warningLabel.setText("");
+            String databaseURL ="jdbc:ucanaccess://C:/Users/Glenn Gerdes/IdeaProjects/PizzaProject/SWE Project.accdb";
+            //gets the employeeID and password from database
+            try (Connection connection = DriverManager.getConnection(databaseURL)) {
+                PreparedStatement myStatement;
+                String SQLQuery="SELECT * FROM EmployeeCredentials WHERE EmployeeID = ? AND Password = ?";
+                myStatement = connection.prepareStatement(SQLQuery);
+                myStatement.setInt(1,Integer.parseInt(IDTextField.getText()));
+                myStatement.setString(2, passwordTextField.getText());
+                ResultSet myRS = myStatement.executeQuery();
+                if(myRS.next()){
+                    String EmpID = myRS.getString("EmployeeID");
+                    String EmpPassword = myRS.getString("Password");
+                    //checks the textFields to see if ID and pass match
+                    if(IDTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
+                        warningLabel.setText("CONGRATS");
+                    }else{
+                        warningLabel.setText("Username/Password is incorrect");
+                    }
+                }else{
+                    warningLabel.setText("Username/Password is incorrect");
+                }
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }else{
-            warningLabel.setText("Username/Password is incorrect");
+            warningLabel.setText("Employee ID must be a number");
         }
+
+
+
+
+
     }
 
 }
