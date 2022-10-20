@@ -7,15 +7,16 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.EmployeeController">
    <children>
-      <Label layoutX="243.0" layoutY="45.0" text="Employee Login Page" />
-      <Label layoutX="218.0" layoutY="123.0" text="Username:" />
+      <Label fx:id="employeeLoginLabel" layoutX="243.0" layoutY="45.0" text="Employee Login Page" />
+      <Label fx:id="usernameLabel" layoutX="218.0" layoutY="123.0" text="Username:" />
       <Label layoutX="218.0" layoutY="192.0" text="Password:" />
-      <TextField layoutX="283.0" layoutY="119.0" />
-      <TextField layoutX="283.0" layoutY="188.0" />
-      <Button layoutX="184.0" layoutY="274.0" mnemonicParsing="false" text="Submit" />
+      <TextField fx:id="usernameTextField" layoutX="283.0" layoutY="119.0" promptText="Enter Username" />
+      <TextField fx:id="passwordTextField" layoutX="283.0" layoutY="188.0" promptText="Enter Password" />
+      <Button layoutX="184.0" layoutY="274.0" mnemonicParsing="false" onAction="#testUsernamePassword" text="Submit" />
       <Button layoutY="2.0" mnemonicParsing="false" text="Home" />
       <Button layoutX="540.0" layoutY="2.0" mnemonicParsing="false" text="Back" />
       <Button layoutX="548.0" layoutY="375.0" mnemonicParsing="false" text="Help" />
       <Button layoutX="332.0" layoutY="274.0" mnemonicParsing="false" text="Cancel" />
+      <Label fx:id="warningLabel" layoutX="269.0" layoutY="235.0" />
    </children>
 </AnchorPane>
