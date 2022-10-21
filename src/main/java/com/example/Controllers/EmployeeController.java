@@ -36,10 +36,15 @@ public class EmployeeController {
         stage.setScene(scene);
         stage.show();
     }
-
-    public void checkIfInt(){
-
+    public void switchToCustomerInfo() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerInfoPage.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
+
+
     public static boolean isInteger(String s) {
         try {
             Integer.parseInt(s);
@@ -52,7 +57,7 @@ public class EmployeeController {
         return true;
     }
 
-    public void testUsernamePassword(){
+    public void testUsernamePassword() throws IOException{
 
         if(isInteger((IDTextField.getText()))==true){
             warningLabel.setText("");
@@ -70,7 +75,7 @@ public class EmployeeController {
                     String EmpPassword = myRS.getString("Password");
                     //checks the textFields to see if ID and pass match
                     if(IDTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
-                        warningLabel.setText("CONGRATS");
+                        switchToCustomerInfo();
                     }else{
                         warningLabel.setText("Username/Password is incorrect");
                     }
