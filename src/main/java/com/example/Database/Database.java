@@ -1,6 +1,11 @@
 package com.example.Database;
 
+import com.example.DeliveryInfoObject;
+import com.example.DrinkObject;
+import com.example.PizzaObject;
+
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Database {
@@ -180,6 +185,9 @@ public class Database {
     public void deleteCard() {
 
     }
+
+
+    public void addOrderDetails(String customerName, String paymentType, DeliveryInfoObject deliveryInfo, ArrayList<PizzaObject> pizzaList, ArrayList<DrinkObject> drinkList){}
 
     // public void modCard() {}
 }

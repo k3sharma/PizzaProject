@@ -28,8 +28,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Button layoutX="36.0" layoutY="64.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="142.0" text="Employee Sign-in" />
-      <Button layoutX="418.0" layoutY="64.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="142.0" text="Manager Sign-in" />
+      <Button layoutX="36.0" layoutY="64.0" mnemonicParsing="false" onAction="#switchToEmp" prefHeight="98.0" prefWidth="142.0" text="Employee Sign-in" />
+      <Button layoutX="418.0" layoutY="64.0" mnemonicParsing="false" onAction="#switchToMan" prefHeight="98.0" prefWidth="142.0" text="Manager Sign-in" />
       <Label layoutX="272.0" layoutY="33.0" text="Sign-in" />
    </children>
 </AnchorPane>
