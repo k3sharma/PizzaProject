@@ -1,0 +1,218 @@
+@startuml
+
+title __CONTROLLERS's Class Diagram__\n
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.ConfirmingOrdersController {
+            ~ IDLabel : Label
+            - root : Parent
+            - scene : Scene
+            - stage : Stage
+            + leftPizzaClicked()
+            + newPizzaButton()
+            + rightPizzaClicked()
+            + switchToReceiptPage()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.CustomerInfoPageController {
+            ~ addressTextField : TextField
+            ~ continueButton : Button
+            ~ deliveryTextFeild : TextField
+            ~ deliveryType : RadioButton
+            ~ nameTextField : TextField
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.EmployeeController {
+            ~ IDLabel : Label
+            ~ IDTextField : TextField
+            ~ employeeLoginLabel : Label
+            ~ passwordLabel : Label
+            ~ passwordTextField : TextField
+            ~ warningLabel : Label
+            - root : Parent
+            - scene : Scene
+            - stage : Stage
+            {static} + isInteger()
+            + switchToCustomerInfo()
+            + switchToCustomerInfo()
+            + testUsernamePassword()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.ManagerController {
+            ~ IDLabel : Label
+            ~ IDTextField : TextField
+            ~ editTextFieldColumn : TextField
+            ~ editTextFieldRow : TextField
+            ~ managerLoginLabel : Label
+            ~ passwordLabel : Label
+            ~ passwordTextField : TextField
+            ~ warningLabel : Label
+            - root : Parent
+            - scene : Scene
+            - stage : Stage
+            + editData()
+            {static} + isInteger()
+            {static} + isManager()
+            + showData()
+            + switchToDatabaseEdit()
+            + switchToDatabaseView()
+            + testUsernamePassword()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.OrderController {
+            {static} + drinkArray : ArrayList<DrinkObject>
+            {static} + pizzaArray : ArrayList<PizzaObject>
+            ~ BOButton : RadioButton
+            ~ BPButton : RadioButton
+            ~ IDLabel : Label
+            ~ PSButton : RadioButton
+            ~ bacButton : RadioButton
+            ~ banPepButton : RadioButton
+            ~ beefButton : RadioButton
+            ~ cheddButton : RadioButton
+            ~ chicButton : RadioButton
+            ~ drinkFlavor : RadioButton
+            ~ drinkSize : RadioButton
+            ~ exBOButton : RadioButton
+            ~ exBPButton : RadioButton
+            ~ exBacButton : RadioButton
+            ~ exBanPepButton : RadioButton
+            ~ exBeefButton : RadioButton
+            ~ exCheddButton : RadioButton
+            ~ exChicButton : RadioButton
+            ~ exHamButton : RadioButton
+            ~ exJalButton : RadioButton
+            ~ exMozzButton : RadioButton
+            ~ exMushButton : RadioButton
+            ~ exOnionButton : RadioButton
+            ~ exPSButton : RadioButton
+            ~ exParmButton : RadioButton
+            ~ exPepButton : RadioButton
+            ~ exPinButton : RadioButton
+            ~ exProvButton : RadioButton
+            ~ exSpinButton : RadioButton
+            ~ exTomButton : RadioButton
+            ~ hamButton : RadioButton
+            ~ jalButton : RadioButton
+            ~ mozzButton : RadioButton
+            ~ mushButton : RadioButton
+            ~ onionButton : RadioButton
+            ~ parmButton : RadioButton
+            ~ pepButton : RadioButton
+            ~ pinButton : RadioButton
+            ~ provButton : RadioButton
+            ~ spinButton : RadioButton
+            ~ tomButton : RadioButton
+            - root : Parent
+            - scene : Scene
+            - stage : Stage
+            + createDrink()
+            + createPizza()
+            {static} + getDrinkArray()
+            {static} + getPizzaArray()
+            {static} + setDrinkArray()
+            {static} + setPizzaArray()
+            + switchToConfirmingOrdersPage()
+            + switchToOrderView2()
+            + switchToOrderView3()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.ReceiptController {
+            ~ IDLabel : Label
+            ~ accNumTextField : TextField
+            ~ cardTextField : TextField
+            ~ cashTextField : TextField
+            ~ checkNumTextField : TextField
+            ~ cvvTextField : TextField
+            ~ expDateTextField : TextField
+            ~ nameOnCardTextField : TextField
+            ~ paymentTypeButton : RadioButton
+            ~ routingAddTextField : TextField
+            ~ zipTextField : TextField
+            - accountNumber : String
+            - cardNumber : String
+            - cashAmount : String
+            - changeDue : String
+            - checkNumber : String
+            - cvv : String
+            - expirationDate : String
+            - nameOnCard : String
+            - paymentType : String
+            - root : Parent
+            - routingAddress : String
+            - scene : Scene
+            - stage : Stage
+            - zipCode : String
+            + printReceipt()
+            + switchToCardInfo()
+            + switchToCashInfo()
+            + switchToCheckInfo()
+            + switchToReceiptPage()
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      namespace Controllers {
+        class com.example.Controllers.StartingController {
+            - root : Parent
+            - scene : Scene
+            - stage : Stage
+            + switchToEmp()
+            + switchToMan()
+        }
+      }
+    }
+  }
+  
+
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

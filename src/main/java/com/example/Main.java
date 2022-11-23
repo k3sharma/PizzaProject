@@ -17,7 +17,7 @@ public class Main extends Application {
         Parent startingRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/StartingView.fxml"));
         Scene startingView = new Scene(startingRoot);
 
-        Parent employeeRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/EmployeeView.fxml"));
+        Parent employeeRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerView.fxml"));
         Scene employeeView = new Scene(employeeRoot);
 
         Parent managerRoot = FXMLLoader.load(getClass().getResource("/FXMLfiles/ManagerView.fxml"));

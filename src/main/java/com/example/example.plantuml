@@ -1,0 +1,183 @@
+@startuml
+
+title __EXAMPLE's Class Diagram__\n
+
+  namespace  {
+    namespace om.example {
+      class com.example.DeliveryInfoObject {
+          - address : String
+          - customerName : String
+          - deliveryInfo : String
+          + DeliveryInfoObject()
+          + getAddress()
+          + getCustomerName()
+          + getDeliveryInfo()
+          + setAddress()
+          + setCustomerName()
+          + setDeliveryInfo()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      class com.example.DrinkObject {
+          - flavor : String
+          - size : String
+          + DrinkObject()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      class com.example.Main {
+          {static} + main()
+          + start()
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.example {
+      class com.example.PizzaObject {
+          - crustType : String
+          - hasBacon : Boolean
+          - hasBananaPeppers : Boolean
+          - hasBeef : Boolean
+          - hasBellPepper : Boolean
+          - hasBlackOlives : Boolean
+          - hasCheddar : Boolean
+          - hasChicken : Boolean
+          - hasExtraBacon : Boolean
+          - hasExtraBananaPeppers : Boolean
+          - hasExtraBeef : Boolean
+          - hasExtraBellPepper : Boolean
+          - hasExtraBlackOlives : Boolean
+          - hasExtraCheddar : Boolean
+          - hasExtraChicken : Boolean
+          - hasExtraHam : Boolean
+          - hasExtraJalapenos : Boolean
+          - hasExtraMozzarella : Boolean
+          - hasExtraMushrooms : Boolean
+          - hasExtraOnion : Boolean
+          - hasExtraParmesean : Boolean
+          - hasExtraPepperoni : Boolean
+          - hasExtraPhillySteak : Boolean
+          - hasExtraPineapple : Boolean
+          - hasExtraProvolone : Boolean
+          - hasExtraSpinach : Boolean
+          - hasExtraTomato : Boolean
+          - hasHam : Boolean
+          - hasJalapenos : Boolean
+          - hasMozzarella : Boolean
+          - hasMushrooms : Boolean
+          - hasOnion : Boolean
+          - hasParmesean : Boolean
+          - hasPepperoni : Boolean
+          - hasPhillySteak : Boolean
+          - hasPineapple : Boolean
+          - hasProvolone : Boolean
+          - hasSpinach : Boolean
+          - hasTomato : Boolean
+          - size : int
+          + PizzaObject()
+          + getCrustType()
+          + getHasBacon()
+          + getHasBananaPeppers()
+          + getHasBeef()
+          + getHasBellPepper()
+          + getHasBlackOlives()
+          + getHasCheddar()
+          + getHasChicken()
+          + getHasExtraBacon()
+          + getHasExtraBananaPeppers()
+          + getHasExtraBeef()
+          + getHasExtraBellPepper()
+          + getHasExtraBlackOlives()
+          + getHasExtraCheddar()
+          + getHasExtraChicken()
+          + getHasExtraHam()
+          + getHasExtraJalapenos()
+          + getHasExtraMozzarella()
+          + getHasExtraMushrooms()
+          + getHasExtraOnion()
+          + getHasExtraParmesean()
+          + getHasExtraPepperoni()
+          + getHasExtraPhillySteak()
+          + getHasExtraPineapple()
+          + getHasExtraProvolone()
+          + getHasExtraSpinach()
+          + getHasExtraTomato()
+          + getHasHam()
+          + getHasJalapenos()
+          + getHasMozzarella()
+          + getHasMushrooms()
+          + getHasOnion()
+          + getHasParmesean()
+          + getHasPepperoni()
+          + getHasPhillySteak()
+          + getHasPineapple()
+          + getHasProvolone()
+          + getHasSpinach()
+          + getHasTomato()
+          + getSize()
+          + setCrustType()
+          + setHasBacon()
+          + setHasBananaPeppers()
+          + setHasBeef()
+          + setHasBellPepper()
+          + setHasBlackOlives()
+          + setHasCheddar()
+          + setHasChicken()
+          + setHasExtraBacon()
+          + setHasExtraBananaPeppers()
+          + setHasExtraBeef()
+          + setHasExtraBellPepper()
+          + setHasExtraBlackOlives()
+          + setHasExtraCheddar()
+          + setHasExtraChicken()
+          + setHasExtraHam()
+          + setHasExtraJalapenos()
+          + setHasExtraMozzarella()
+          + setHasExtraMushrooms()
+          + setHasExtraOnion()
+          + setHasExtraParmesean()
+          + setHasExtraPepperoni()
+          + setHasExtraPhillySteak()
+          + setHasExtraPineapple()
+          + setHasExtraProvolone()
+          + setHasExtraSpinach()
+          + setHasExtraTomato()
+          + setHasHam()
+          + setHasJalapenos()
+          + setHasMozzarella()
+          + setHasMushrooms()
+          + setHasOnion()
+          + setHasParmesean()
+          + setHasPepperoni()
+          + setHasPhillySteak()
+          + setHasPineapple()
+          + setHasProvolone()
+          + setHasSpinach()
+          + setHasTomato()
+          + setSize()
+      }
+    }
+  }
+  
+
+  com.example.Main -up-|> javafx.application.Application
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

@@ -94,6 +94,9 @@ public class ReceiptController {
         } else if(paymentType.equals("Check")){
 
         }
+
+
+
     }
 
 

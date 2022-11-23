@@ -6,19 +6,16 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.CustomerInfoPageController">
    <children>
-      <TextField layoutX="115.0" layoutY="106.0" />
-      <TextField layoutX="115.0" layoutY="151.0" />
-      <TextField layoutX="115.0" layoutY="200.0" prefHeight="68.0" prefWidth="149.0" />
-      <Label layoutX="77.0" layoutY="110.0" text="Name:" />
-      <Label layoutX="68.0" layoutY="155.0" text="Address:" />
-      <Label layoutX="43.0" layoutY="226.0" text="Delivery Info:" />
+      <TextField fx:id="addressTextField" layoutX="99.0" layoutY="103.0" />
+      <TextField fx:id="deliveryTextFeild" layoutX="99.0" layoutY="152.0" prefHeight="68.0" prefWidth="149.0" />
+      <Label layoutX="52.0" layoutY="107.0" text="Address:" />
+      <Label layoutX="27.0" layoutY="178.0" text="Delivery Info:" />
       <Label layoutX="46.0" layoutY="46.0" text="Order Type:" />
-      <RadioButton layoutX="115.0" layoutY="46.0" mnemonicParsing="false" text="Delivery" />
-      <RadioButton layoutX="213.0" layoutY="46.0" mnemonicParsing="false" text="Pickup" />
-      <Button layoutX="274.0" layoutY="319.0" mnemonicParsing="false" text="Continue" />
-      <Label layoutX="264.0" layoutY="14.0" text="Customer Info Page" />
+      <RadioButton fx:id="deliveryTypeD" layoutX="115.0" layoutY="46.0" mnemonicParsing="false" text="Delivery" />
+      <RadioButton fx:id="deliveryTypeP" layoutX="213.0" layoutY="46.0" mnemonicParsing="false" text="Pickup" />
+      <Button layoutX="274.0" layoutY="319.0" mnemonicParsing="false" onAction="#saveCustomerDetails" text="Continue" />
+      <Label fx:id="IDLabel" layoutX="264.0" layoutY="14.0" text="Customer Info Page" />
    </children>
 </AnchorPane>

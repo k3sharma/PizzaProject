@@ -13,12 +13,13 @@ import javafx.stage.Stage;
 import java.sql.*;
 import java.io.IOException;
 
-public class EmployeeController {
+public class CustomerLoginController {
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     @FXML
-    TextField IDTextField;
+    TextField usernameTextField;
     @FXML
     TextField passwordTextField;
     @FXML
@@ -43,6 +44,13 @@ public class EmployeeController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToAccountCreation() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/accountCreation.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     public static boolean isInteger(String s) {
@@ -59,22 +67,27 @@ public class EmployeeController {
 
     public void testUsernamePassword() throws IOException{
 
-        if(isInteger((IDTextField.getText()))==true){
-            warningLabel.setText("");
-            String databaseURL ="jdbc:ucanaccess://C:/Users/Glenn Gerdes/IdeaProjects/PizzaProject/SWE Project.accdb";
+
+
+            String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
             //gets the employeeID and password from database
             try (Connection connection = DriverManager.getConnection(databaseURL)) {
                 PreparedStatement myStatement;
-                String SQLQuery="SELECT * FROM EmployeeCredentials WHERE EmployeeID = ? AND Password = ?";
+                String SQLQuery="SELECT * FROM CUSTOMER WHERE Username = ? AND Password = ?";
                 myStatement = connection.prepareStatement(SQLQuery);
-                myStatement.setInt(1,Integer.parseInt(IDTextField.getText()));
+                myStatement.setString(1,usernameTextField.getText());
                 myStatement.setString(2, passwordTextField.getText());
                 ResultSet myRS = myStatement.executeQuery();
                 if(myRS.next()){
-                    String EmpID = myRS.getString("EmployeeID");
+                    String EmpID = myRS.getString("Username");
                     String EmpPassword = myRS.getString("Password");
                     //checks the textFields to see if ID and pass match
-                    if(IDTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
+                    if(usernameTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
+                        String userData= usernameTextField.getText()+"-"+passwordTextField.getText();
+
+                        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+                        stage.setUserData(userData);
+
                         switchToCustomerInfo();
                     }else{
                         warningLabel.setText("Username/Password is incorrect");
@@ -85,9 +98,7 @@ public class EmployeeController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }else{
-            warningLabel.setText("Employee ID must be a number");
-        }
+
 
 
 

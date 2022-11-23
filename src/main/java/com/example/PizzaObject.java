@@ -44,7 +44,11 @@ public class PizzaObject {
     private Boolean hasExtraBananaPeppers;
     private Boolean hasJalapenos;
     private Boolean hasExtraJalapenos;
-    
+
+    public PizzaObject(){
+
+    }
+
     public PizzaObject(int size, String crustType, Boolean hasMozzarella, Boolean hasExtraMozzarella,Boolean hasCheddar,Boolean hasExtraCheddar,Boolean hasProvolone,Boolean hasExtraProvolone,Boolean hasParmesean,Boolean hasExtraParmesean,Boolean hasPepperoni,Boolean hasExtraPepperoni,Boolean hasHam,Boolean hasExtraHam,Boolean hasBacon,Boolean hasExtraBacon,Boolean hasBeef,Boolean hasExtraBeef,Boolean hasChicken,Boolean hasExtraChicken,Boolean hasPhillySteak,Boolean hasExtraPhillySteak,Boolean hasOnion,Boolean hasExtraOnion,Boolean hasBellPepper,Boolean hasExtraBellPepper,Boolean hasSpinach,Boolean hasExtraSpinach,Boolean hasTomato,Boolean hasExtraTomato,Boolean hasPineapple,Boolean hasExtraPineapple,Boolean hasBlackOlives,Boolean hasExtraBlackOlives,Boolean hasMushrooms,Boolean hasExtraMushrooms,Boolean hasBananaPeppers,Boolean hasExtraBananaPeppers,Boolean hasJalapenos,Boolean hasExtraJalapenos){
         this.size=size;
         this.crustType=crustType;

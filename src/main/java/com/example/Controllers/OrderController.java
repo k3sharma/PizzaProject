@@ -131,21 +131,21 @@ RadioButton exMozzButton;
     }
 
     public void switchToOrderView2() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DatabaseEdit.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/OrderView2.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void switchToOrderView3() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DatabaseEdit.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/OrderView3.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void switchToConfirmingOrdersPage() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DatabaseEdit.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
