@@ -97,37 +97,197 @@ RadioButton exMozzButton;
     @FXML
     RadioButton exJalButton;
     @FXML
-    RadioButton drinkSize;
+    RadioButton drinkSizeS;
     @FXML
-    RadioButton drinkFlavor;
+    RadioButton drinkSizeM;
+    @FXML
+    RadioButton drinkSizeL;
+    @FXML
+    RadioButton drinkFlavorC;
+    @FXML
+    RadioButton drinkFlavorL;
+    @FXML
+    RadioButton drinkFlavorI;
+    @FXML
+    RadioButton drinkFlavorW;
+    @FXML
+    RadioButton drinkFlavorS;
+    @FXML
+    RadioButton pizzaSizeS;
+    @FXML
+    RadioButton pizzaSizeM;
+    @FXML
+    RadioButton pizzaSizeL;
+    @FXML
+    RadioButton pizzaSizeXL;
+    @FXML
+    RadioButton crustTypeHT;
+    @FXML
+    RadioButton crustTypeT;
+    @FXML
+    RadioButton crustTypeCS;
+    @FXML
+    RadioButton crustTypeGF;
+
     public static ArrayList<PizzaObject> pizzaArray;
     public static ArrayList<DrinkObject> drinkArray;
-    public ArrayList<PizzaObject> createPizza(int size, String crustType, Boolean hasMozzarella, Boolean hasExtraMozzarella,Boolean hasCheddar,Boolean hasExtraCheddar,Boolean hasProvolone,Boolean hasExtraProvolone,Boolean hasParmesean,Boolean hasExtraParmesean,Boolean hasPepperoni,Boolean hasExtraPepperoni,Boolean hasHam,Boolean hasExtraHam,Boolean hasBacon,Boolean hasExtraBacon,Boolean hasBeef,Boolean hasExtraBeef,Boolean hasChicken,Boolean hasExtraChicken,Boolean hasPhillySteak,Boolean hasExtraPhillySteak,Boolean hasOnion,Boolean hasExtraOnion,Boolean hasBellPepper,Boolean hasExtraBellPepper,Boolean hasSpinach,Boolean hasExtraSpinach,Boolean hasTomato,Boolean hasExtraTomato,Boolean hasPineapple,Boolean hasExtraPineapple,Boolean hasBlackOlives,Boolean hasExtraBlackOlives,Boolean hasMushrooms,Boolean hasExtraMushrooms,Boolean hasBananaPeppers,Boolean hasExtraBananaPeppers,Boolean hasJalapenos,Boolean hasExtraJalapenos){
+
+    String dSize;
+    String dFlavor;
+    String pSize;
+    String pCrustType;
+    int currentPizza=0;
+    int currentDrink=0;
 
 
-        return pizzaArray;
+
+
+    public void switchPizzaSizeS(){
+        pSize = "Small";
+        pizzaSizeS.setSelected(true);
+        pizzaSizeM.setSelected(false);
+        pizzaSizeL.setSelected(false);
+        pizzaSizeXL.setSelected(false);
     }
-    public ArrayList<DrinkObject> createDrink(String size, String flavor){
+    public void switchPizzaSizeM(){
+        pSize = "Medium";
+        pizzaSizeS.setSelected(false);
+        pizzaSizeM.setSelected(true);
+        pizzaSizeL.setSelected(false);
+        pizzaSizeXL.setSelected(false);
+    }
+    public void switchPizzaSizeL(){
+        pSize = "large";
+        pizzaSizeS.setSelected(false);
+        pizzaSizeM.setSelected(false);
+        pizzaSizeL.setSelected(true);
+        pizzaSizeXL.setSelected(false);
+    }
+    public void switchPizzaSizeXL(){
+        pSize = "Extra large";
+        pizzaSizeS.setSelected(true);
+        pizzaSizeM.setSelected(false);
+        pizzaSizeL.setSelected(false);
+        pizzaSizeXL.setSelected(true);
+    }
 
+    public void switchPizzaCrustHT(){
+        pCrustType = "Hand Tossed";
+        crustTypeHT.setSelected(true);
+        crustTypeCS.setSelected(false);
+        crustTypeGF.setSelected(false);
+        crustTypeT.setSelected(false);
+    }
 
-        return drinkArray;
+    public void switchPizzaCrustCS(){
+        pCrustType = "Cheese-Stuffed";
+        crustTypeHT.setSelected(false);
+        crustTypeCS.setSelected(true);
+        crustTypeGF.setSelected(false);
+        crustTypeT.setSelected(false);
+    }
+
+    public void switchPizzaCrustT(){
+        pCrustType = "Thin";
+        crustTypeHT.setSelected(false);
+        crustTypeCS.setSelected(false);
+        crustTypeGF.setSelected(false);
+        crustTypeT.setSelected(true);
+    }
+    public void switchPizzaCrustGF(){
+        pCrustType = "Gluten-Free";
+        crustTypeHT.setSelected(false);
+        crustTypeCS.setSelected(false);
+        crustTypeGF.setSelected(true);
+        crustTypeT.setSelected(false);
+    }
+
+    public void switchDrinkSizeS(){
+        dSize = "Small";
+        drinkSizeS.setSelected(true);
+        drinkSizeM.setSelected(false);
+        drinkSizeL.setSelected(false);
+    }
+    public void switchDrinkSizeM(){
+        dSize = "Medium";
+        drinkSizeS.setSelected(false);
+        drinkSizeM.setSelected(true);
+        drinkSizeL.setSelected(false);
+    }
+    public void switchDrinkSizeL(){
+        dSize = "Large";
+        drinkSizeS.setSelected(false);
+        drinkSizeM.setSelected(false);
+        drinkSizeL.setSelected(true);
+    }
+    public void switchFlavorC(){
+        dFlavor = "Coca-Cola";
+        drinkFlavorC.setSelected(true);
+        drinkFlavorL.setSelected(false);
+        drinkFlavorI.setSelected(false);
+        drinkFlavorW.setSelected(false);
+        drinkFlavorS.setSelected(false);
+    }
+    public void switchFlavorL(){
+        dFlavor = "Lemonade";
+        drinkFlavorC.setSelected(false);
+        drinkFlavorL.setSelected(true);
+        drinkFlavorI.setSelected(false);
+        drinkFlavorW.setSelected(false);
+        drinkFlavorS.setSelected(false);
+    }
+    public void switchFlavorI(){
+        dFlavor = "Iced Tea";
+        drinkFlavorC.setSelected(false);
+        drinkFlavorL.setSelected(false);
+        drinkFlavorI.setSelected(true);
+        drinkFlavorW.setSelected(false);
+        drinkFlavorS.setSelected(false);
+    }
+    public void switchFlavorW(){
+        dFlavor = "Water";
+        drinkFlavorC.setSelected(false);
+        drinkFlavorL.setSelected(false);
+        drinkFlavorI.setSelected(false);
+        drinkFlavorW.setSelected(true);
+        drinkFlavorS.setSelected(false);
+    }
+    public void switchFlavorS(){
+        dFlavor = "Sprite";
+        drinkFlavorC.setSelected(false);
+        drinkFlavorL.setSelected(false);
+        drinkFlavorI.setSelected(false);
+        drinkFlavorW.setSelected(false);
+        drinkFlavorS.setSelected(true);
     }
 
 
-    public static ArrayList<DrinkObject> getDrinkArray() {
-        return drinkArray;
+
+    public void addItems() throws IOException{
+        if(pizzaArray.get(currentPizza).getSize() != null ){
+            pizzaArray.get(currentPizza).setSize(pSize);
+            pizzaArray.get(currentPizza).setCrustType(pCrustType);
+            pizzaArray.get(currentPizza).setHasMozzarella(pTopping);
+
+
+        }
+
+        addDrink();
+        addPizza();
+
+        switchToConfirmingOrdersPage();
     }
 
-    public static ArrayList<PizzaObject> getPizzaArray() {
-        return pizzaArray;
-    }
 
-    public static void setPizzaArray(ArrayList<PizzaObject> pizzaArray) {
-        OrderController.pizzaArray = pizzaArray;
-    }
 
-    public static void setDrinkArray(ArrayList<DrinkObject> drinkArray) {
-        OrderController.drinkArray = drinkArray;
+    public void addPizza(){
+        PizzaObject myPizza = new PizzaObject();
+        pizzaArray.add(myPizza);
+    }
+    public void addDrink(){
+
+        DrinkObject myDrink = new DrinkObject(dSize, dFlavor);
+        drinkArray.add(myDrink);
     }
 
     public void switchToOrderView2() throws IOException {

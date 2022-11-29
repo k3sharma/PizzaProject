@@ -39,13 +39,35 @@ public class CustomerInfoPageController {
     private String address;
     private String customerName;
     private String deliveryInfo;
+    private String deliveryType;
 
 
 
 
+
+    public void setDelp(){
+        deliveryTypeP.setSelected(true);
+        deliveryTypeD.setSelected(false);
+        deliveryType="Pickup";
+    }
+    public void setDeld(){
+        deliveryTypeD.setSelected(true);
+        deliveryTypeP.setSelected(false);
+        deliveryType="Delivery";
+    }
+
+    public void checkButtons(){
+        if(deliveryType==null){
+            warningLabel.setText("please select a delivery type");
+            return;
+        }else if(addressTextField.getText()==null){
+            warningLabel.setText("please enter an address");
+            return;
+        }
+    }
 
     public void saveCustomerDetails() throws IOException{
-
+        checkButtons();
 
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
 
@@ -73,6 +95,13 @@ public class CustomerInfoPageController {
             addAddStatement.setString(2,customerUsername);
             addAddStatement.setString(3,customerPassword);
             addAddStatement.executeUpdate();
+            address=addressTextField.getText();
+            deliveryInfo=deliveryTextFeild.getText();
+
+            DeliveryInfoObject customerInfo = new DeliveryInfoObject(address, deliveryInfo, deliveryType);
+
+            stage.setUserData(customerInfo);
+
             switchToOrderView1();
 
         }catch (SQLException e) {
