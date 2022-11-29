@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="671.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.HelpDatabasePageController">
+   <children>
+      <Label layoutX="303.0" layoutY="67.0" text="Need Help?" />
+      <Label layoutX="10.0" layoutY="97.0" text="To change data in the database you must choose the corresponding row number and column number to select the entity." />
+      <Label layoutX="92.0" layoutY="129.0" text="Once the entity is selected you can enter a new value in the box labeled “Enter New Value”" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.CashPaymentController">
+   <children>
+      <Label layoutX="81.0" layoutY="78.0" text="Choose a method of payment:" />
+      <Label layoutX="81.0" layoutY="112.0" text="Cash" />
+      <RadioButton layoutX="153.0" layoutY="112.0" mnemonicParsing="false" selected="true" />
+      <Label layoutX="81.0" layoutY="163.0" text="Enter amount:" />
+      <TextField layoutX="171.0" layoutY="159.0" />
+      <Label layoutX="85.0" layoutY="211.0" text="Change due:" />
+      <Label layoutX="163.0" layoutY="211.0" text="\$" />
+      <TextField layoutX="171.0" layoutY="207.0" />
+      <Button layoutX="266.0" layoutY="251.0" mnemonicParsing="false" text="Continue" />
+   </children>
+</AnchorPane>

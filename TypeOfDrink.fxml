@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.TypeOfDrinkController">
+   <children>
+      <Label layoutX="247.0" layoutY="70.0" text="What type of drink?" underline="true" />
+      <Label layoutX="43.0" layoutY="116.0" text="Small ($1)" />
+      <Label layoutX="35.0" layoutY="168.0" text="Medium ($2)" />
+      <Label layoutX="42.0" layoutY="221.0" text="Large ($3)" />
+      <RadioButton layoutX="132.0" layoutY="116.0" mnemonicParsing="false" />
+      <RadioButton layoutX="132.0" layoutY="168.0" mnemonicParsing="false" />
+      <RadioButton layoutX="132.0" layoutY="221.0" mnemonicParsing="false" />
+      <RadioButton layoutX="353.0" layoutY="107.0" mnemonicParsing="false" text="Coca-Cola" />
+      <RadioButton layoutX="353.0" layoutY="150.0" mnemonicParsing="false" text="Lemonade" />
+      <RadioButton layoutX="353.0" layoutY="191.0" mnemonicParsing="false" text="Iced Tea" />
+      <RadioButton layoutX="354.0" layoutY="230.0" mnemonicParsing="false" text="Water" />
+      <RadioButton layoutX="355.0" layoutY="267.0" mnemonicParsing="false" text="Sprite" />
+      <Button layoutX="266.0" layoutY="326.0" mnemonicParsing="false" text="Continue" />
+   </children>
+</AnchorPane>
