@@ -18,84 +18,8 @@ public class OrderController {
 private Scene scene;
 private Parent root;
 private Stage stage;
-@FXML
-Label IDLabel;
-@FXML
-    RadioButton mozzButton;
-@FXML
-RadioButton exMozzButton;
     @FXML
-    RadioButton cheddButton;
-    @FXML
-    RadioButton exCheddButton;
-    @FXML
-    RadioButton provButton;
-    @FXML
-    RadioButton exProvButton;
-    @FXML
-    RadioButton parmButton;
-    @FXML
-    RadioButton exParmButton;
-    @FXML
-    RadioButton pepButton;
-    @FXML
-    RadioButton exPepButton;
-    @FXML
-    RadioButton hamButton;
-    @FXML
-    RadioButton exHamButton;
-    @FXML
-    RadioButton bacButton;
-    @FXML
-    RadioButton exBacButton;
-    @FXML
-    RadioButton beefButton;
-    @FXML
-    RadioButton exBeefButton;
-    @FXML
-    RadioButton chicButton;
-    @FXML
-    RadioButton exChicButton;
-    @FXML
-    RadioButton PSButton;
-    @FXML
-    RadioButton exPSButton;
-    @FXML
-    RadioButton onionButton;
-    @FXML
-    RadioButton exOnionButton;
-    @FXML
-    RadioButton BPButton;
-    @FXML
-    RadioButton exBPButton;
-    @FXML
-    RadioButton spinButton;
-    @FXML
-    RadioButton exSpinButton;
-    @FXML
-    RadioButton tomButton;
-    @FXML
-    RadioButton exTomButton;
-    @FXML
-    RadioButton pinButton;
-    @FXML
-    RadioButton exPinButton;
-    @FXML
-    RadioButton BOButton;
-    @FXML
-    RadioButton exBOButton;
-    @FXML
-    RadioButton mushButton;
-    @FXML
-    RadioButton exMushButton;
-    @FXML
-    RadioButton banPepButton;
-    @FXML
-    RadioButton exBanPepButton;
-    @FXML
-    RadioButton jalButton;
-    @FXML
-    RadioButton exJalButton;
+    Label IDLabel;
     @FXML
     RadioButton drinkSizeS;
     @FXML
@@ -128,10 +52,48 @@ RadioButton exMozzButton;
     RadioButton crustTypeCS;
     @FXML
     RadioButton crustTypeGF;
+    @FXML
+    RadioButton toppingM;
+    @FXML
+    RadioButton toppingEM;
+    @FXML
+    RadioButton toppingChed;
+    @FXML
+    RadioButton toppingEChed;
+    @FXML
+    RadioButton toppingPep;
+    @FXML
+    RadioButton toppingEPep;
+    @FXML
+    RadioButton toppingB;
+    @FXML
+    RadioButton toppingEB;
+    @FXML
+    RadioButton toppingChic;
+    @FXML
+    RadioButton toppingEChic;
+    @FXML
+    RadioButton toppingO;
+    @FXML
+    RadioButton toppingEO;
+    @FXML
+    RadioButton toppingBP;
+    @FXML
+    RadioButton toppingEBP;
+    @FXML
+    RadioButton toppingPin;
+    @FXML
+    RadioButton toppingEPin;
+
+
+
+
 
     public static ArrayList<PizzaObject> pizzaArray;
     public static ArrayList<DrinkObject> drinkArray;
 
+
+    String pTopping;
     String dSize;
     String dFlavor;
     String pSize;
@@ -260,15 +222,100 @@ RadioButton exMozzButton;
         drinkFlavorW.setSelected(false);
         drinkFlavorS.setSelected(true);
     }
+// these are all in sets of 2 beacuse its the topping button then the extra button
+    public void switchToppingM(){
+        toppingM.setSelected(true);
+        toppingEM.setSelected(false);
+    }
+    public void switchToppingEM(){
+        toppingM.setSelected(false);
+        toppingEM.setSelected(true);
+    }
 
+    public void switchToppingB(){
+        toppingB.setSelected(true);
+        toppingEB.setSelected(false);
+    }
+    public void switchToppingEB(){
+        toppingB.setSelected(false);
+        toppingEB.setSelected(true);
+    }
+
+    public void switchToppingChed(){
+        toppingChed.setSelected(true);
+        toppingEChed.setSelected(false);
+    }
+    public void switchToppingEChed(){
+        toppingChed.setSelected(false);
+        toppingEChed.setSelected(true);
+    }
+
+    public void switchToppingChic(){
+        toppingChic.setSelected(true);
+        toppingEChic.setSelected(false);
+    }
+    public void switchToppingEChic(){
+        toppingChic.setSelected(false);
+        toppingEChic.setSelected(true);
+    }
+
+    public void switchToppingPin(){
+        toppingPin.setSelected(true);
+        toppingEPin.setSelected(false);
+    }
+    public void switchToppingEPin(){
+        toppingPin.setSelected(false);
+        toppingEPin.setSelected(true);
+    }
+
+    public void switchToppingBP(){
+        toppingBP.setSelected(true);
+        toppingEBP.setSelected(false);
+    }
+    public void switchToppingEBP(){
+        toppingBP.setSelected(false);
+        toppingEBP.setSelected(true);
+    }
+
+    public void switchToppingO(){
+        toppingO.setSelected(true);
+        toppingEO.setSelected(false);
+    }
+    public void switchToppingEO(){
+        toppingO.setSelected(false);
+        toppingEO.setSelected(true);
+    }
+
+    public void switchToppingPep(){
+        toppingM.setSelected(true);
+        toppingEM.setSelected(false);
+    }
+    public void switchToppingEPep(){
+        toppingPep.setSelected(false);
+        toppingEPep.setSelected(true);
+    }
 
 
     public void addItems() throws IOException{
         if(pizzaArray.get(currentPizza).getSize() != null ){
             pizzaArray.get(currentPizza).setSize(pSize);
             pizzaArray.get(currentPizza).setCrustType(pCrustType);
-            pizzaArray.get(currentPizza).setHasMozzarella(pTopping);
-
+            pizzaArray.get(currentPizza).setHasMozzarella(toppingM.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraMozzarella(toppingEM.isSelected());
+            pizzaArray.get(currentPizza).setHasBeef(toppingB.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraBeef(toppingEB.isSelected());
+            pizzaArray.get(currentPizza).setHasCheddar(toppingChed.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraCheddar(toppingEChed.isSelected());
+            pizzaArray.get(currentPizza).setHasChicken(toppingChic.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraChicken(toppingEChic.isSelected());
+            pizzaArray.get(currentPizza).setHasPineapple(toppingPin.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraPineapple(toppingEPin.isSelected());
+            pizzaArray.get(currentPizza).setHasBellPepper(toppingBP.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraBellPepper(toppingEBP.isSelected());
+            pizzaArray.get(currentPizza).setHasOnion(toppingO.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraOnion(toppingEO.isSelected());
+            pizzaArray.get(currentPizza).setHasPepperoni(toppingPep.isSelected());
+            pizzaArray.get(currentPizza).setHasExtraPepperoni(toppingEPep.isSelected());
 
         }
 

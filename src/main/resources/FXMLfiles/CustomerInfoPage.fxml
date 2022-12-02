@@ -13,8 +13,8 @@
       <Label layoutX="52.0" layoutY="107.0" text="Address:" />
       <Label layoutX="27.0" layoutY="178.0" text="Delivery Info:" />
       <Label layoutX="46.0" layoutY="46.0" text="Order Type:" />
-      <RadioButton fx:id="deliveryTypeD" layoutX="115.0" layoutY="46.0" mnemonicParsing="false" text="Delivery" />
-      <RadioButton fx:id="deliveryTypeP" layoutX="213.0" layoutY="46.0" mnemonicParsing="false" text="Pickup" />
+      <RadioButton fx:id="deliveryTypeD" layoutX="115.0" layoutY="46.0" mnemonicParsing="false" onAction="#setDeld" text="Delivery" />
+      <RadioButton fx:id="deliveryTypeP" layoutX="213.0" layoutY="46.0" mnemonicParsing="false" onAction="#setDelp" text="Pickup" />
       <Button layoutX="274.0" layoutY="319.0" mnemonicParsing="false" onAction="#saveCustomerDetails" text="Continue" />
       <Label fx:id="IDLabel" layoutX="264.0" layoutY="14.0" text="Customer Info Page" />
       <Label fx:id="warningLabel" layoutX="286.0" layoutY="285.0" />

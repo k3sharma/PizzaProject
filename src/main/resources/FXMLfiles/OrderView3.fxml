@@ -17,45 +17,22 @@
       <Label layoutX="168.0" layoutY="22.0" text="Type of Cheese" />
       <Label layoutX="286.0" layoutY="22.0" text="Meats" />
       <Label layoutX="403.0" layoutY="22.0" text="Veggies" />
-      <Label layoutX="499.0" layoutY="22.0" text="More Veggies" />
-      <RadioButton layoutX="165.0" layoutY="57.0" mnemonicParsing="false" text="Mozzarella" />
-      <RadioButton layoutX="165.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="168.0" layoutY="125.0" mnemonicParsing="false" text="Cheddar" />
-      <RadioButton layoutX="168.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="168.0" layoutY="183.0" mnemonicParsing="false" text="Provolone" />
-      <RadioButton layoutX="168.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="168.0" layoutY="243.0" mnemonicParsing="false" text="Parmesan" />
-      <RadioButton layoutX="168.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="263.0" layoutY="57.0" mnemonicParsing="false" text="Pepperoni" />
-      <RadioButton layoutX="263.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="263.0" layoutY="125.0" mnemonicParsing="false" text="Ham" />
-      <RadioButton layoutX="263.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="263.0" layoutY="183.0" mnemonicParsing="false" text="Bacon" />
-      <RadioButton layoutX="263.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="261.0" layoutY="243.0" mnemonicParsing="false" text="Beef" />
-      <RadioButton layoutX="261.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="57.0" mnemonicParsing="false" text="Onion" />
-      <RadioButton layoutX="385.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="125.0" mnemonicParsing="false" text="Bell Pepper" />
-      <RadioButton layoutX="385.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="183.0" mnemonicParsing="false" text="Spinach" />
-      <RadioButton layoutX="385.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="243.0" mnemonicParsing="false" text="Tomato" />
-      <RadioButton layoutX="385.0" layoutY="260.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="499.0" layoutY="57.0" mnemonicParsing="false" text="Mushrooms" />
-      <RadioButton layoutX="499.0" layoutY="74.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="497.0" layoutY="125.0" mnemonicParsing="false" text="Banana Peppers" />
-      <RadioButton layoutX="497.0" layoutY="142.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="293.0" mnemonicParsing="false" text="Pineapple" />
-      <RadioButton layoutX="385.0" layoutY="310.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="385.0" layoutY="342.0" mnemonicParsing="false" text="Black Olives" />
-      <RadioButton layoutX="385.0" layoutY="359.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="497.0" layoutY="183.0" mnemonicParsing="false" text="Jalapenos" />
-      <RadioButton layoutX="497.0" layoutY="200.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="261.0" layoutY="293.0" mnemonicParsing="false" text="Chicken" />
-      <RadioButton layoutX="261.0" layoutY="310.0" mnemonicParsing="false" text="Extra" />
-      <RadioButton layoutX="261.0" layoutY="342.0" mnemonicParsing="false" text="Philiy Steak" />
-      <RadioButton layoutX="261.0" layoutY="359.0" mnemonicParsing="false" text="Extra" />
-      <Button layoutX="497.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToConfirmingOrdersPage" text="Continue" />
+      <RadioButton fx:id="toppingM" layoutX="165.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToppingM" text="Mozzarella" />
+      <RadioButton fx:id="toppingEM" layoutX="165.0" layoutY="74.0" mnemonicParsing="false" onAction="#switchToppingEM" text="Extra" />
+      <RadioButton fx:id="toppingChed" layoutX="165.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToppingChed" text="Cheddar" />
+      <RadioButton fx:id="toppingEChed" layoutX="165.0" layoutY="126.0" mnemonicParsing="false" onAction="#switchToppingEChed" text="Extra" />
+      <RadioButton fx:id="toppingPep" layoutX="263.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToppingPep" text="Pepperoni" />
+      <RadioButton fx:id="toppingEPep" layoutX="263.0" layoutY="74.0" mnemonicParsing="false" onAction="#switchToppingEPep" text="Extra" />
+      <RadioButton fx:id="toppingB" layoutX="263.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToppingB" text="Beef" />
+      <RadioButton fx:id="toppingEB" layoutX="263.0" layoutY="126.0" mnemonicParsing="false" onAction="#switchToppingEB" text="Extra" />
+      <RadioButton fx:id="toppingO" layoutX="385.0" layoutY="57.0" mnemonicParsing="false" onAction="#switchToppingO" text="Onion" />
+      <RadioButton fx:id="toppingEO" layoutX="385.0" layoutY="74.0" mnemonicParsing="false" onAction="#switchToppingEO" text="Extra" />
+      <RadioButton fx:id="toppingBP" layoutX="384.0" layoutY="109.0" mnemonicParsing="false" onAction="#switchToppingBP" text="Bell Pepper" />
+      <RadioButton fx:id="toppingEBP" layoutX="384.0" layoutY="126.0" mnemonicParsing="false" onAction="#switchToppingEBP" text="Extra" />
+      <RadioButton fx:id="toppingPin" layoutX="388.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchToppingPin" text="Pineapple" />
+      <RadioButton fx:id="toppingEPin" layoutX="388.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToppingEPin" text="Extra" />
+      <RadioButton fx:id="toppingChic" layoutX="263.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchToppingChic" text="Chicken" />
+      <RadioButton fx:id="toppingEChic" layoutX="263.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToppingEChic" text="Extra" />
+      <Button layoutX="497.0" layoutY="298.0" mnemonicParsing="false" onAction="#addItems" text="Continue" />
    </children>
 </AnchorPane>

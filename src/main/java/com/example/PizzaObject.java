@@ -9,7 +9,14 @@ public class PizzaObject {
 
     private Boolean hasPepperoni;
     private Boolean hasExtraPepperoni;
-
+    private Boolean hasBeef;
+    private Boolean hasExtraBeef;
+    private Boolean hasChicken;
+    private Boolean hasExtraChicken;
+    private Boolean hasCheddar;
+    private Boolean hasExtraCheddar;
+    private Boolean hasPineapple;
+    private Boolean hasExtraPineapple;
 
     private Boolean hasOnion;
     private Boolean hasExtraOnion;
@@ -32,6 +39,7 @@ public PizzaObject(String size, String crustType, Boolean hasMozzarella, Boolean
     this.hasExtraOnion=hasExtraOnion;
     this.hasBellPepper=hasBellPepper;
     this.hasExtraBellPepper=hasExtraBellPepper;
+
 }
 
 
@@ -68,7 +76,37 @@ public PizzaObject(String size, String crustType, Boolean hasMozzarella, Boolean
         return hasExtraOnion;
     }
 
+    public Boolean getHasBeef() {
+        return hasBeef;
+    }
 
+    public Boolean getHasCheddar() {
+        return hasCheddar;
+    }
+
+    public Boolean getHasChicken() {
+        return hasChicken;
+    }
+
+    public Boolean getHasExtraBeef() {
+        return hasExtraBeef;
+    }
+
+    public Boolean getHasExtraCheddar() {
+        return hasExtraCheddar;
+    }
+
+    public Boolean getHasExtraChicken() {
+        return hasExtraChicken;
+    }
+
+    public Boolean getHasExtraPineapple() {
+        return hasExtraPineapple;
+    }
+
+    public Boolean getHasPineapple() {
+        return hasPineapple;
+    }
 
     public void setCrustType(String crustType) {
         this.crustType = crustType;
@@ -108,5 +146,37 @@ public PizzaObject(String size, String crustType, Boolean hasMozzarella, Boolean
 
     public void setHasPepperoni(Boolean hasPepperoni) {
         this.hasPepperoni = hasPepperoni;
+    }
+
+    public void setHasBeef(Boolean hasBeef) {
+        this.hasBeef = hasBeef;
+    }
+
+    public void setHasCheddar(Boolean hasCheddar) {
+        this.hasCheddar = hasCheddar;
+    }
+
+    public void setHasChicken(Boolean hasChicken) {
+        this.hasChicken = hasChicken;
+    }
+
+    public void setHasExtraBeef(Boolean hasExtraBeef) {
+        this.hasExtraBeef = hasExtraBeef;
+    }
+
+    public void setHasExtraCheddar(Boolean hasExtraCheddar) {
+        this.hasExtraCheddar = hasExtraCheddar;
+    }
+
+    public void setHasExtraChicken(Boolean hasExtraChicken) {
+        this.hasExtraChicken = hasExtraChicken;
+    }
+
+    public void setHasExtraPineapple(Boolean hasExtraPineapple) {
+        this.hasExtraPineapple = hasExtraPineapple;
+    }
+
+    public void setHasPineapple(Boolean hasPineapple) {
+        this.hasPineapple = hasPineapple;
     }
 }
