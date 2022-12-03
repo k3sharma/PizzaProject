@@ -708,4 +708,20 @@ private Stage stage;
 
 
     }
+    public void switchToPaymentInfo() throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        ArrayList<ArrayList> userData = new ArrayList<ArrayList>();
+        userData.add(pizzaArray);
+        userData.add(drinkArray);
+        stage.setUserData(userData);
+
+
+
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/PaymentInfo.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 }

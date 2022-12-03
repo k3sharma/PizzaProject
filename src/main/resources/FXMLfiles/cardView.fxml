@@ -8,7 +8,6 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.ReceiptController">
    <children>
       <TextField fx:id="cardNumberTextField" layoutX="139.0" layoutY="129.0" />
@@ -25,7 +24,7 @@
       <RadioButton layoutX="113.0" layoutY="69.0" mnemonicParsing="false" text="Credit" />
       <RadioButton layoutX="214.0" layoutY="69.0" mnemonicParsing="false" text="Debit" />
       <Text layoutX="37.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Card Type:" />
-      <Label layoutX="26.0" layoutY="24.0" text="Choose Payment:" underline="true">
+      <Label fx:id="IDLabel" layoutX="26.0" layoutY="24.0" text="Choose Payment:" underline="true">
          <font>
             <Font size="25.0" />
          </font>

@@ -7,22 +7,25 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.sql.*;
 import java.io.IOException;
 
 public class ManagerController {
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     @FXML
-    TextField IDTextField;
+    TextField usernameTextField;
     @FXML
     TextField passwordTextField;
     @FXML
-    Label managerLoginLabel;
+    Label employeeLoginLabel;
     @FXML
     Label IDLabel;
     @FXML
@@ -30,89 +33,109 @@ public class ManagerController {
     @FXML
     Label warningLabel;
     @FXML
-    TextField editTextFieldRow;
+    ScrollPane myScroll;
     @FXML
-    TextField editTextFieldColumn;
-    public void switchToDatabaseView() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DatabaseView.fxml"));
-        stage = (Stage)((Node)IDLabel).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    public void switchToDatabaseEdit() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DatabaseEdit.fxml"));
+    Text myText;
+
+
+    public void switchToManagerEdit() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ManagerEdit.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
 
+    public void switchToStartingView() throws IOException{
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/StartingView.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
-    public static boolean isInteger(String s) {
-        try {
-            Integer.parseInt(s);
-        } catch(NumberFormatException e) {
-            return false;
-        } catch(NullPointerException e) {
-            return false;
+    public void selectCustomer() throws IOException{
+        String databaseURL ="jdbc:ucanaccess://PizzaProject.accdb";
+        //gets the employeeID and password from database
+        try (Connection connection = DriverManager.getConnection(databaseURL)) {
+            PreparedStatement myStatement;
+            String SQLQuery="SELECT * FROM CUSTOMER";
+            myStatement = connection.prepareStatement(SQLQuery);
+
+            ResultSet myRS = myStatement.executeQuery();
+
+            ResultSetMetaData rsmd = myRS.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+            while (myRS.next()) {
+                for (int i = 1; i <= columnsNumber; i++) {
+                    if (i > 1) System.out.print(",  ");
+                    String columnValue = myRS.getString(i);
+                    System.out.print(columnValue + " " + rsmd.getColumnName(i));
+                }
+                System.out.println("");
+            }
+
+
+
+
+        } catch (SQLException e){
+            e.printStackTrace();
         }
-        // only got here if we didn't return false
-        return true;
+
+
     }
-    public static boolean isManager(){
-        return true;
-    }
+
+
+
+
+
 
     public void testUsernamePassword() throws IOException{
+        System.out.println("good");
 
-        if(isInteger((IDTextField.getText()))==true){
-            warningLabel.setText("");
-            String databaseURL ="jdbc:ucanaccess://C:/Users/Glenn Gerdes/IdeaProjects/PizzaProject/SWE Project.accdb";
-            //gets the employeeID and password from database
-            try (Connection connection = DriverManager.getConnection(databaseURL)) {
-                PreparedStatement myStatement;
-                String SQLQuery="SELECT * FROM EmployeeCredentials WHERE EmployeeID = ? AND Password = ? AND isManager = ?";
-                myStatement = connection.prepareStatement(SQLQuery);
-                myStatement.setInt(1,Integer.parseInt(IDTextField.getText()));
-                myStatement.setString(2, passwordTextField.getText());
-                myStatement.setBoolean(2, true);
-                ResultSet myRS = myStatement.executeQuery();
-                if(myRS.next()){
-                    String EmpID = myRS.getString("EmployeeID");
-                    String EmpPassword = myRS.getString("Password");
-                    //checks the textFields to see if ID and pass match
-                    if(IDTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
-                        switchToDatabaseView();
-                    }else{
-                        warningLabel.setText("Username/Password is incorrect");
-                    }
+
+        String databaseURL ="jdbc:ucanaccess://PizzaProject.accdb";
+        //gets the employeeID and password from database
+        try (Connection connection = DriverManager.getConnection(databaseURL)) {
+            PreparedStatement myStatement;
+            String SQLQuery="SELECT * FROM EMPLOYEE WHERE Username = ? AND Password = ?";
+            myStatement = connection.prepareStatement(SQLQuery);
+            myStatement.setString(1,usernameTextField.getText());
+            myStatement.setString(2, passwordTextField.getText());
+            ResultSet myRS = myStatement.executeQuery();
+            if(myRS.next()){
+                String customerID = myRS.getString("Username");
+                String customerPassword = myRS.getString("Password");
+
+                //checks the textFields to see if ID and pass match
+                if(usernameTextField.getText().equals(customerID) && passwordTextField.getText().equals(customerPassword)){
+
+
+
+                    System.out.println("good");
+                    switchToManagerEdit();
                 }else{
                     warningLabel.setText("Username/Password is incorrect");
                 }
-            } catch (SQLException e) {
-                e.printStackTrace();
+            }else{
+                warningLabel.setText("Username/Password is incorrect");
             }
-        }else{
-            warningLabel.setText("Employee ID must be a number");
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
 
 
 
 
-    }
-
-    public void showData(){
 
     }
-    public void editData(String column, int row){
-
-    }
-
-
-
-
 
 }
+
+
+
+
+
+
 

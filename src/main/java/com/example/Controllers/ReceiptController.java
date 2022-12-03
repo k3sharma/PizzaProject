@@ -189,9 +189,9 @@ public class ReceiptController {
 
     public String setReceipt() throws IOException{
         String receiptOutput="";
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
-        stage = (Stage)((Node)IDLabel).getScene().getWindow();
 
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
         ArrayList<ArrayList> userDataArray = (ArrayList<ArrayList>) stage.getUserData();
         ArrayList<PizzaObject> pizzaArray = userDataArray.get(0);
         ArrayList<DrinkObject> drinkArray = userDataArray.get(1);
@@ -280,7 +280,7 @@ public class ReceiptController {
                 totalPrice=totalPrice+7.99;
             }
             if( pizzaArray.get(i).getSize().equals("Extra Large Size")){
-                totalPrice=totalPrice+8.99;
+                totalPrice=totalPrice+9.99;
             }
         }
         for(int i=0;i< drinkArray.size();i++){
