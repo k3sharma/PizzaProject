@@ -102,7 +102,7 @@ public class CustomerInfoPageController {
 
 
 
-        String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
+        String databaseURL ="jdbc:ucanaccess://PizzaProject.accdb";
         //gets the username and password from database
 
         try (Connection connection = DriverManager.getConnection(databaseURL)) {

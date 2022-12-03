@@ -51,7 +51,7 @@ public class AccountCreationController {
     }
 
     public void saveDetails() throws IOException{
-        String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
+        String databaseURL ="jdbc:ucanaccess://PizzaProject.accdb";
         //gets the employeeID and password from database
         warningLabel.setText("Username/Password is incorrect");
         try (Connection connection = DriverManager.getConnection(databaseURL)) {
