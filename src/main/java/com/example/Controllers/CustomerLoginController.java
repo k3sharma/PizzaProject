@@ -70,7 +70,7 @@ public class CustomerLoginController {
 
 
 
-            String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
+            String databaseURL ="jdbc:ucanaccess://PizzaProject.accdb";
             //gets the employeeID and password from database
             try (Connection connection = DriverManager.getConnection(databaseURL)) {
                 PreparedStatement myStatement;
