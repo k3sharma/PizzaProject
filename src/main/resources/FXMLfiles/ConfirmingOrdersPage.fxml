@@ -20,5 +20,6 @@
       <Button layoutX="424.0" layoutY="81.0" mnemonicParsing="false" onAction="#newPizzaButtonClicked" text="New Pizza" />
       <Label fx:id="currentPizzaLabel" layoutX="244.0" layoutY="85.0" text="Select Or Create a Pizza" />
       <Label fx:id="warningLabel1" layoutX="286.0" layoutY="219.0" />
+      <Button layoutX="120.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToConfirmDrink" prefHeight="51.0" prefWidth="101.0" text="Add a Drink!" />
    </children>
 </AnchorPane>
