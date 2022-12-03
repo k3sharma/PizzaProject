@@ -16,7 +16,7 @@
       <Button layoutX="385.0" layoutY="81.0" mnemonicParsing="false" onAction="#rightPizzaClicked" text="&gt;" />
       <Label fx:id="listIngredientsLabel" layoutX="244.0" layoutY="114.0" text="Ordered Items Go Here!" />
       <Button layoutX="258.0" layoutY="304.0" mnemonicParsing="false" onAction="#switchToOrderView1" prefHeight="51.0" prefWidth="101.0" text="Edit this Pizza" />
-      <Button layoutX="276.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToReceiptPage" text="Continue" />
+      <Button layoutX="276.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToPaymentInfo" text="Continue" />
       <Button layoutX="424.0" layoutY="81.0" mnemonicParsing="false" onAction="#newPizzaButtonClicked" text="New Pizza" />
       <Label fx:id="currentPizzaLabel" layoutX="244.0" layoutY="85.0" text="Select Or Create a Pizza" />
       <Label fx:id="warningLabel1" layoutX="286.0" layoutY="219.0" />

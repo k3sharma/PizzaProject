@@ -13,7 +13,6 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="22.0" prefHeight="103.0" prefWidth="106.0" text="3+ Toppings and extra Toppings will be +$0.50 each" wrapText="true" />
       <Label layoutX="168.0" layoutY="22.0" text="Type of Cheese" />
       <Label layoutX="286.0" layoutY="22.0" text="Meats" />
       <Label layoutX="403.0" layoutY="22.0" text="Veggies" />
