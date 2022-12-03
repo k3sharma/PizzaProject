@@ -2,11 +2,11 @@ package com.example;
 
 public class DeliveryInfoObject {
     private String address;
-    private String customerName;
+    private String deliveryType;
     private String deliveryInfo;
-    public DeliveryInfoObject(String address, String customerName, String deliveryInfo){
+    public DeliveryInfoObject(String address, String deliveryInfo, String deliveryType){
                 this.address=address;
-                this.customerName=customerName;
+                this.deliveryType=deliveryType;
                 this.deliveryInfo=deliveryInfo;
     }
 
@@ -14,9 +14,7 @@ public class DeliveryInfoObject {
         return address;
     }
 
-    public String getCustomerName() {
-        return customerName;
-    }
+
 
     public String getDeliveryInfo() {
         return deliveryInfo;
@@ -26,9 +24,7 @@ public class DeliveryInfoObject {
         this.address = address;
     }
 
-    public void setCustomerName(String customerName) {
-        this.customerName = customerName;
-    }
+
 
     public void setDeliveryInfo(String deliveryInfo) {
         this.deliveryInfo = deliveryInfo;

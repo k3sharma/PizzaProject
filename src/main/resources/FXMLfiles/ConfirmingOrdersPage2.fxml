@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.OrderController">
+   <children>
+      <Label fx:id="IDLabel" layoutX="24.0" layoutY="24.0" text="Drink Ordered:" underline="true">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="206.0" layoutY="91.0" mnemonicParsing="false" onAction="#leftPizzaClicked" text="&lt;" />
+      <Button layoutX="395.0" layoutY="91.0" mnemonicParsing="false" onAction="#rightPizzaClicked" text="&gt;" />
+      <Label fx:id="listIngredientsLabel" layoutX="254.0" layoutY="124.0" text="Ordered Items Go Here!" />
+      <Button layoutX="268.0" layoutY="314.0" mnemonicParsing="false" onAction="#switchToOrderView1" prefHeight="51.0" prefWidth="101.0" text="Edit this Drink" />
+      <Button layoutX="286.0" layoutY="371.0" mnemonicParsing="false" onAction="#switchToReceiptPage" text="Continue" />
+      <Button layoutX="434.0" layoutY="91.0" mnemonicParsing="false" onAction="#newPizzaButtonClicked" text="New Drink" />
+      <Label fx:id="currentPizzaLabel" layoutX="254.0" layoutY="95.0" text="Select Or Create a Drink" />
+   </children>
+</AnchorPane>

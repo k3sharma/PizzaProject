@@ -31,9 +31,9 @@
       <Label layoutX="275.0" layoutY="42.0" text="Large" />
       <Label layoutX="406.0" layoutY="50.0" text="Medium" />
       <Label layoutX="529.0" layoutY="58.0" text="Small" />
-      <RadioButton layoutX="282.0" layoutY="225.0" mnemonicParsing="false" />
-      <RadioButton layoutX="535.0" layoutY="201.0" mnemonicParsing="false" />
-      <RadioButton layoutX="421.0" layoutY="209.0" mnemonicParsing="false" />
+      <RadioButton fx:id="pizzaSizeL" layoutX="282.0" layoutY="225.0" mnemonicParsing="false" onAction="#switchPizzaSizeL" />
+      <RadioButton fx:id="pizzaSizeS" layoutX="535.0" layoutY="201.0" mnemonicParsing="false" onAction="#switchPizzaSizeS" />
+      <RadioButton fx:id="pizzaSizeM" layoutX="421.0" layoutY="209.0" mnemonicParsing="false" onAction="#switchPizzaSizeM" />
       <Circle fill="#9a572b" layoutX="115.0" layoutY="142.0" radius="100.0" stroke="BLACK" strokeType="INSIDE" />
       <Label layoutX="86.0" layoutY="113.0" prefHeight="57.0" prefWidth="61.0" text="18&quot;">
          <font>
@@ -41,11 +41,12 @@
          </font>
       </Label>
       <Label layoutX="87.0" layoutY="14.0" text="Extra Large" />
-      <RadioButton layoutX="109.0" layoutY="250.0" mnemonicParsing="false" />
+      <RadioButton fx:id="pizzaSizeXL" layoutX="109.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchPizzaSizeXL" />
       <Label layoutX="34.0" layoutY="281.0" text="Ex - $9.99" />
       <Label layoutX="34.0" layoutY="298.0" text="Large - $7.99" />
       <Label layoutX="37.0" layoutY="315.0" text="Med - $6.99" />
       <Label layoutX="34.0" layoutY="337.0" text="small - $5.99" />
       <Label fx:id="IDLabel" layoutX="254.0" layoutY="14.0" text="What Size Pizza?" underline="true" />
+      <Label fx:id="warningLabel2" layoutX="277.0" layoutY="281.0" />
    </children>
 </AnchorPane>

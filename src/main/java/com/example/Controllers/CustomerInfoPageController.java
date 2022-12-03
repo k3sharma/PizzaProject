@@ -33,21 +33,73 @@ public class CustomerInfoPageController {
     @FXML
     Label warningLabel;
 
-    private Parent root;
-    private Stage stage;
-    private  Scene scene;
-    private String address;
-    private String customerName;
-    private String deliveryInfo;
+    Parent root;
+
+    Scene scene;
+    String address;
+
+    String deliveryInfo;
+    String deliveryType;
+
+    Stage stage;
+
+    String customerAddress;
 
 
 
+    public void setDelp(){
+        deliveryTypeP.setSelected(true);
+        deliveryTypeD.setSelected(false);
+        deliveryType="Pickup";
+        addressTextField.setVisible(false);
+    }
+    public void setDeld(){
+        deliveryTypeD.setSelected(true);
+        deliveryTypeP.setSelected(false);
+        deliveryType="Delivery";
+        addressTextField.setVisible(true);
+    }
 
+    public Boolean checkButtons(){
+        if(deliveryType==null){
+            warningLabel.setText("please select a delivery type");
+            return false;
+        }else if(addressTextField.getText()==null && deliveryTypeD.isSelected() ==true){
+            warningLabel.setText("please enter an address");
+            return false;
+        }
+        // we only get here if the relevant info is filled in, otherwise change the warning lable and dont go further
+        return true;
+    }
 
     public void saveCustomerDetails() throws IOException{
 
 
+
+
+
+
+        if(checkButtons() == false){
+            return;
+        }
+
+        //sets userdata to the info from customerLoginController's stage.setUserData
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerView.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
+        String userData = (String) stage.getUserData();
+        String[] arr = userData.split("-");
+
+        if(arr.length == 3){
+            customerAddress= arr[2];
+        }else{
+            customerAddress ="";
+        }
+
+
+
+        String customerUsername = arr[0];
+        String customerPassword = arr[1];
+
 
 
         String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
@@ -57,23 +109,30 @@ public class CustomerInfoPageController {
             PreparedStatement addAddStatement;
             String SQLUpdate = "UPDATE CUSTOMER SET Address = ? WHERE Username = ? AND Password = ?";
             addAddStatement = connection.prepareStatement(SQLUpdate);
-            addAddStatement.setString(1, addressTextField.getText());
+            // makes the new customer address the same as the old address if they leave the addressTextField blank
+            if(addressTextField.getText()==null || addressTextField.getText()=="" || addressTextField.getText().trim().isEmpty()){
 
-            String userData = (String) stage.getUserData();
-            //sets userdata to the info from customerLoginController's stage.setUserData
+                addAddStatement.setString(1,customerAddress);
 
-            String[] arr = userData.split("-");
+            }else{
+
+                addAddStatement.setString(1, addressTextField.getText());
+            }
 
 
-
-
-            String customerUsername = arr[0];
-            String customerPassword = arr[1];
+            //sets variables to the corresponding ones passed from the database, from CustomerLoginController
 
             addAddStatement.setString(2,customerUsername);
             addAddStatement.setString(3,customerPassword);
             addAddStatement.executeUpdate();
-            switchToOrderView1();
+            address=addressTextField.getText();
+            deliveryInfo=deliveryTextFeild.getText();
+
+            DeliveryInfoObject customerInfo = new DeliveryInfoObject(address, deliveryInfo, deliveryType);
+
+            stage.setUserData(customerInfo);
+
+            switchToConfirmingOrdersPage();
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -82,8 +141,8 @@ public class CustomerInfoPageController {
 
     }
 
-    public void switchToOrderView1() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/OrderView1.fxml"));
+    public void switchToConfirmingOrdersPage() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

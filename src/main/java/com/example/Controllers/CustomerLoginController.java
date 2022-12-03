@@ -30,6 +30,7 @@ public class CustomerLoginController {
     Label passwordLabel;
     @FXML
     Label warningLabel;
+
     public void switchToCustomerInfo(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerInfoPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -79,11 +80,12 @@ public class CustomerLoginController {
                 myStatement.setString(2, passwordTextField.getText());
                 ResultSet myRS = myStatement.executeQuery();
                 if(myRS.next()){
-                    String EmpID = myRS.getString("Username");
-                    String EmpPassword = myRS.getString("Password");
+                    String customerID = myRS.getString("Username");
+                    String customerPassword = myRS.getString("Password");
+                    String customerAddress = myRS.getString("Address");
                     //checks the textFields to see if ID and pass match
-                    if(usernameTextField.getText().equals(EmpID) && passwordTextField.getText().equals(EmpPassword)){
-                        String userData= usernameTextField.getText()+"-"+passwordTextField.getText();
+                    if(usernameTextField.getText().equals(customerID) && passwordTextField.getText().equals(customerPassword)){
+                        String userData= customerID+"-"+customerPassword+"-"+customerAddress;
 
                         stage = (Stage)((Node)IDLabel).getScene().getWindow();
                         stage.setUserData(userData);

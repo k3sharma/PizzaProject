@@ -14,7 +14,7 @@ public class StartingController {
     private Scene scene;
     private Parent root;
     public void switchToCustomerView(ActionEvent event) throws IOException {
-        System.out.println("work");
+
         root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerView.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
