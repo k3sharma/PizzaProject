@@ -14,17 +14,13 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="66.0" layoutY="105.0" text="Number of Pizzas:" />
-      <Label layoutX="66.0" layoutY="170.0" text="Total amount due:" />
-      <Button layoutX="66.0" layoutY="255.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="132.0" text="Confirm Order and Print Receipt" wrapText="true" />
-      <ScrollPane layoutX="300.0" layoutY="44.0" prefHeight="294.0" prefWidth="264.0">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Text layoutX="14.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No Pizzas on Order!" />
-               </children>
-            </AnchorPane>
-        </content>
+      <Label fx:id="numOfPizzaLabel" layoutX="66.0" layoutY="105.0" text="Number of Pizzas:" />
+      <Label fx:id="numOfDrinkLabel" layoutX="66.0" layoutY="170.0" text="Total amount due:" />
+      <Button layoutX="66.0" layoutY="255.0" mnemonicParsing="false" onAction="#printReceipt" prefHeight="83.0" prefWidth="132.0" text="Confirm Order and Print Receipt" wrapText="true" />
+      <ScrollPane fx:id="myScroll" layoutX="300.0" layoutY="44.0" prefHeight="294.0" prefWidth="202.0">
+         <content>
+            <Text fx:id="myText" strokeType="OUTSIDE" strokeWidth="0.0" text="Press the Button For Your Receipt!" />
+         </content>
       </ScrollPane>
    </children>
 </AnchorPane>

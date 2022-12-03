@@ -7,6 +7,10 @@ public class DrinkObject {
         this.flavor=flavor;
         this.size=size;
     }
+    public DrinkObject(){
+        this.size="";
+        this.flavor="";
+    }
 
     public String getFlavor() {
         return flavor;

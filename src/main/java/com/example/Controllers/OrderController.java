@@ -99,7 +99,16 @@ private Stage stage;
     Button newPizzaButton;
     @FXML
     Label listIngredientsLabel;
-
+    @FXML
+    Label currentDrinkLabel;
+    @FXML
+    Label warningLabelConfirmDrink;
+    @FXML
+    Label warningLabelDrinkView;
+    @FXML
+    Label listIngredientsLabelDrink;
+    @FXML
+    Label IDLabelDrink;
 
 
     int editPizza;
@@ -130,7 +139,7 @@ private Stage stage;
     String pSize;
     String pCrustType;
     static int currentPizza;
-    int currentDrink;
+    static int currentDrink;
 
 
 
@@ -154,7 +163,7 @@ private Stage stage;
         pizzaArray.get(currentPizza).setSize(pSize);
     }
     public void switchPizzaSizeL(){
-        pSize = "large Size";
+        pSize = "Large Size";
         pizzaSizeS.setSelected(false);
         pizzaSizeM.setSelected(false);
         pizzaSizeL.setSelected(true);
@@ -162,7 +171,7 @@ private Stage stage;
         pizzaArray.get(currentPizza).setSize(pSize);
     }
     public void switchPizzaSizeXL(){
-        pSize = "Extra large Size";
+        pSize = "Extra Large Size";
         pizzaSizeS.setSelected(false);
         pizzaSizeM.setSelected(false);
         pizzaSizeL.setSelected(false);
@@ -207,21 +216,21 @@ private Stage stage;
     }
 
     public void switchDrinkSizeS(){
-        dSize = "Small";
+        dSize = "Small Size";
         drinkSizeS.setSelected(true);
         drinkSizeM.setSelected(false);
         drinkSizeL.setSelected(false);
         drinkArray.get(currentDrink).setSize(dSize);
     }
     public void switchDrinkSizeM(){
-        dSize = "Medium";
+        dSize = "Medium Size";
         drinkSizeS.setSelected(false);
         drinkSizeM.setSelected(true);
         drinkSizeL.setSelected(false);
         drinkArray.get(currentDrink).setSize(dSize);
     }
     public void switchDrinkSizeL(){
-        dSize = "Large";
+        dSize = "Large Size";
         drinkSizeS.setSelected(false);
         drinkSizeM.setSelected(false);
         drinkSizeL.setSelected(true);
@@ -382,8 +391,8 @@ private Stage stage;
 
     public void switchToppingPep(){
         pToppingPep = "Pepperoni";
-        toppingM.setSelected(true);
-        toppingEM.setSelected(false);
+        toppingPep.setSelected(true);
+        toppingEPep.setSelected(false);
         pizzaArray.get(currentPizza).setHasPepperoni(true);
         pizzaArray.get(currentPizza).setHasExtraPepperoni(false);
     }
@@ -509,6 +518,17 @@ private Stage stage;
 
 
     public void switchToReceiptPage() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+
+        ArrayList<ArrayList> userData = new ArrayList<ArrayList>();
+        userData.add(pizzaArray);
+        userData.add(drinkArray);
+        stage.setUserData(userData);
+
+
+
+
         root = FXMLLoader.load(getClass().getResource("/FXMLfiles/Receipt Page.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
@@ -522,14 +542,10 @@ private Stage stage;
 
 
 
-    public void addDrink(){
 
-        DrinkObject myDrink = new DrinkObject(dSize, dFlavor);
-        drinkArray.add(myDrink);
-    }
 
     public void switchToOrderView1() throws IOException {
-        editPizza=currentPizza;
+
         if(pizzaArray.size()==0){
             warningLabel1.setText("please add a pizza to the order");
         }else{
@@ -538,8 +554,7 @@ private Stage stage;
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
-            System.out.println("currfromor:"+currentPizza);
-            System.out.println("editfromor:"+editPizza);
+
         }
 
 
@@ -574,16 +589,115 @@ private Stage stage;
 
 
     }
-    public void switchToConfirmingOrdersPage() throws IOException {
-        ArrayList<ArrayList> userData = new ArrayList<ArrayList>();
-        userData.add(pizzaArray);
-        userData.add(drinkArray);
 
+
+
+
+
+
+
+
+    public void switchToConfirmDrink() throws IOException{
+
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage2.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
-        stage.setUserData(userData);
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    public String makeIngredientListDrink(){
+
+        String ingredientString="";
+
+        if(drinkArray.get(currentDrink).getSize()==""){
+            return"No Flavors/Sizes Selected!";
+        }else{
+            ingredientString=ingredientString+(drinkArray.get(currentDrink).getSize())+"\n";
+            ingredientString=ingredientString+(drinkArray.get(currentDrink).getFlavor())+"\n";
+
+
+        }
+        return ingredientString;
+    }
 
 
 
+
+
+
+
+
+    public void switchToDrinkView() throws IOException{
+
+        if(drinkArray.size()==0){
+            warningLabelConfirmDrink.setText("please add a drink to the order");
+        }else{
+            root = FXMLLoader.load(getClass().getResource("/FXMLfiles/DrinkView.fxml"));
+            stage = (Stage)((Node)IDLabelDrink).getScene().getWindow();
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+
+        }
+    }
+    public void rightDrinkClicked(){
+        if(drinkArray.size() == 0){
+
+        }else{
+            currentDrink = currentDrink +1;
+            if(currentDrink > drinkArray.size()-1){
+                currentDrink = 0;
+
+            }
+            currentDrinkLabel.setText("Drink#: "+currentDrink);
+
+            listIngredientsLabelDrink.setText(makeIngredientListDrink());
+
+        }
+
+    }
+    public void leftDrinkClicked(){
+        if(drinkArray.size() == 0){
+
+        }else{
+            currentDrink = currentDrink-1;
+            if(currentDrink < 0){
+                currentDrink = drinkArray.size()-1;
+
+            }
+            currentDrinkLabel.setText("Pizza#: "+currentDrink);
+            listIngredientsLabelDrink.setText(makeIngredientListDrink());
+
+        }
+
+    }
+    public void newDrinkButtonClicked(){
+
+        DrinkObject myDrink = new DrinkObject();
+        drinkArray.add(myDrink);
+        currentDrink=drinkArray.size()-1;
+        currentDrinkLabel.setText("Drink#: "+currentDrink);
+        listIngredientsLabelDrink.setText(makeIngredientListDrink());
+
+    }
+
+
+
+    public void switchToConfirmingOrdersPageFromDrink() throws IOException {
+
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
+        stage = (Stage)((Node)IDLabelDrink).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+
+
+
+    }
+
+    public void switchToConfirmingOrdersPage() throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
