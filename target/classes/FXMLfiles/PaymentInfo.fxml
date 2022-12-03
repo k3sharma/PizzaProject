@@ -8,9 +8,9 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.Controllers.ReceiptController">
    <children>
-      <RadioButton fx:id="paymentTypeButtonCash" layoutX="84.0" layoutY="60.0" mnemonicParsing="false" text="Cash" />
-      <RadioButton fx:id="paymentTypeButtonCard" layoutX="84.0" layoutY="91.0" mnemonicParsing="false" text="Debit/Credit" />
-      <RadioButton fx:id="paymentTypeButtonCheck" layoutX="84.0" layoutY="120.0" mnemonicParsing="false" text="Check" />
+      <RadioButton fx:id="paymentTypeButtonCash" layoutX="84.0" layoutY="60.0" mnemonicParsing="false" onAction="#setCash" text="Cash" />
+      <RadioButton fx:id="paymentTypeButtonCard" layoutX="84.0" layoutY="91.0" mnemonicParsing="false" onAction="#setCard" text="Debit/Credit" />
+      <RadioButton fx:id="paymentTypeButtonCheck" layoutX="84.0" layoutY="120.0" mnemonicParsing="false" onAction="#setCheck" text="Check" />
       <Label fx:id="IDLabel" layoutX="16.0" layoutY="14.0" text="Choose Payment:" underline="true">
          <font>
             <Font size="25.0" />

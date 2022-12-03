@@ -15,18 +15,18 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ReceiptController {
-    private String paymentType;
-    private String cardNumber;
-    private String expirationDate;
-    private String cvv;
-    private String nameOnCard;
-    private String zipCode;
-    private double cashAmount;
-    private double changeDue;
-    private String routingAddress;
-    private String accountNumber;
-    private String checkNumber;
-    private String cardType;
+    static String paymentType;
+     String cardNumber;
+     String expirationDate;
+     String cvv;
+     String nameOnCard;
+     String zipCode;
+     static double cashAmount;
+     double changeDue;
+     String routingAddress;
+     String accountNumber;
+     String checkNumber;
+     String cardType;
     @FXML
     RadioButton paymentTypeButtonCash;
     @FXML
@@ -84,12 +84,14 @@ public class ReceiptController {
         paymentTypeButtonCard.setSelected(true);
         paymentTypeButtonCash.setSelected(false);
         paymentTypeButtonCheck.setSelected(false);
+        System.out.println("payment: "+paymentType);
     }
     public void setCash(){
         paymentType="Cash";
         paymentTypeButtonCard.setSelected(false);
         paymentTypeButtonCash.setSelected(true);
         paymentTypeButtonCheck.setSelected(false);
+
     }
     public void setCheck(){
         paymentType="Check";
@@ -176,6 +178,9 @@ public class ReceiptController {
 
 
     public void switchToReceiptPage() throws IOException {
+
+        cashAmount=Double.valueOf(cashTextField.getText());
+
         root = FXMLLoader.load(getClass().getResource("/FXMLfiles/Receipt Page.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
@@ -300,7 +305,7 @@ public class ReceiptController {
 
 
         if(paymentType=="Cash"){
-            receiptOutput=receiptOutput+"Cash in: "+cashAmount+" Change Due: "+(cashAmount-changeDue);
+            receiptOutput=receiptOutput+"Cash in: "+cashAmount+" Change Due: "+(Math.round(cashAmount-totalPrice));
         }
 
         if(paymentType=="Card"){
@@ -309,7 +314,7 @@ public class ReceiptController {
 
         System.out.println(receiptOutput);
 
-
+        System.out.println("pay: "+paymentType);
         numOfPizzaLabel.setText("Number of Pizzas: "+ pizzaArray.size());
         numOfDrinkLabel.setText("Number of Drinks: "+ drinkArray.size());
         return receiptOutput;
