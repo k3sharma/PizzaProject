@@ -42,8 +42,8 @@ public class AccountCreationController {
     TextField phoneTextField;
 
 
-    public void switchToCustomerInfo() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerInfoPage.fxml"));
+    public void switchToCustomerView() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerLoginController.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -81,7 +81,7 @@ public class AccountCreationController {
                 addCustomerStatement.setDate(7,date);
                 addCustomerStatement.executeUpdate();
                 // test case is 'John' 'Smith' '' '(111) 222-3333' 'jSmith' '1234' (date variable) ------- #2 in CUSTOMER database
-                switchToCustomerInfo();
+                switchToCustomerView();
 
             }
 

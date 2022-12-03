@@ -13,5 +13,6 @@
       <RadioButton fx:id="crustTypeCS" layoutX="84.0" layoutY="175.0" mnemonicParsing="false" onAction="#switchPizzaCrustCS" text="Cheese-Stuffed" />
       <RadioButton fx:id="crustTypeGF" layoutX="84.0" layoutY="211.0" mnemonicParsing="false" onAction="#switchPizzaCrustGF" text="Gluten-Free" />
       <Button layoutX="274.0" layoutY="291.0" mnemonicParsing="false" onAction="#switchToOrderView3" text="Continue" />
+      <Label fx:id="warningLabel3" layoutX="286.0" layoutY="255.0" />
    </children>
 </AnchorPane>

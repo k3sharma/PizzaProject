@@ -33,6 +33,7 @@
       <RadioButton fx:id="toppingEPin" layoutX="388.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToppingEPin" text="Extra" />
       <RadioButton fx:id="toppingChic" layoutX="263.0" layoutY="159.0" mnemonicParsing="false" onAction="#switchToppingChic" text="Chicken" />
       <RadioButton fx:id="toppingEChic" layoutX="263.0" layoutY="176.0" mnemonicParsing="false" onAction="#switchToppingEChic" text="Extra" />
-      <Button layoutX="497.0" layoutY="298.0" mnemonicParsing="false" onAction="#addItems" text="Continue" />
+      <Button layoutX="497.0" layoutY="298.0" mnemonicParsing="false" onAction="#switchToConfirmingOrdersPage" text="Continue" />
+      <Label fx:id="warningLabel4" layoutX="289.0" layoutY="258.0" />
    </children>
 </AnchorPane>

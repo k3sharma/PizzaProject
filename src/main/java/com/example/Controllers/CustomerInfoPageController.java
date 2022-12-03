@@ -74,8 +74,7 @@ public class CustomerInfoPageController {
 
     public void saveCustomerDetails() throws IOException{
 
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerView.fxml"));
-        stage = (Stage)((Node)IDLabel).getScene().getWindow();
+
 
 
 
@@ -85,9 +84,11 @@ public class CustomerInfoPageController {
         }
 
         //sets userdata to the info from customerLoginController's stage.setUserData
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/CustomerView.fxml"));
+        stage = (Stage)((Node)IDLabel).getScene().getWindow();
         String userData = (String) stage.getUserData();
         String[] arr = userData.split("-");
-        System.out.println(userData);
+
         if(arr.length == 3){
             customerAddress= arr[2];
         }else{
@@ -98,9 +99,7 @@ public class CustomerInfoPageController {
 
         String customerUsername = arr[0];
         String customerPassword = arr[1];
-        System.out.println("user: "+customerUsername);
-        System.out.println("pass: "+customerPassword);
-        System.out.println("add: "+customerAddress);
+
 
 
         String databaseURL ="jdbc:ucanaccess://C:/Users/hitsf/IdeaProjects/GroupProject/PizzaProject.accdb";
@@ -112,10 +111,9 @@ public class CustomerInfoPageController {
             addAddStatement = connection.prepareStatement(SQLUpdate);
             // makes the new customer address the same as the old address if they leave the addressTextField blank
             if(addressTextField.getText()==null || addressTextField.getText()=="" || addressTextField.getText().trim().isEmpty()){
-                System.out.println("add: "+customerAddress);
-                System.out.println("add text:"+addressTextField.getText());
+
                 addAddStatement.setString(1,customerAddress);
-                System.out.println("addAfter: "+customerAddress);
+
             }else{
 
                 addAddStatement.setString(1, addressTextField.getText());
@@ -134,7 +132,7 @@ public class CustomerInfoPageController {
 
             stage.setUserData(customerInfo);
 
-            switchToOrderView1();
+            switchToConfirmingOrdersPage();
 
         }catch (SQLException e) {
             e.printStackTrace();
@@ -143,8 +141,8 @@ public class CustomerInfoPageController {
 
     }
 
-    public void switchToOrderView1() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/OrderView1.fxml"));
+    public void switchToConfirmingOrdersPage() throws IOException {
+        root = FXMLLoader.load(getClass().getResource("/FXMLfiles/ConfirmingOrdersPage.fxml"));
         stage = (Stage)((Node)IDLabel).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

@@ -25,7 +25,24 @@ public class PizzaObject {
 
 
     public PizzaObject(){
-
+        this.size="";
+        this.crustType="";
+        this.hasMozzarella=false;
+        this.hasExtraMozzarella=false;
+        this.hasCheddar=false;
+        this.hasExtraCheddar=false;
+        this.hasBeef=false;
+        this.hasExtraBeef=false;
+        this.hasChicken=false;
+        this.hasExtraChicken=false;
+        this.hasPepperoni=false;
+        this.hasExtraPepperoni=false;
+        this.hasOnion=false;
+        this.hasExtraOnion=false;
+        this.hasBellPepper=false;
+        this.hasExtraBellPepper=false;
+        this.hasPineapple=false;
+        this.hasExtraPineapple=false;
     }
 
 public PizzaObject(String size, String crustType, Boolean hasMozzarella, Boolean hasExtraMozzarella, Boolean hasPepperoni, Boolean hasExtraPepperoni, Boolean hasOnion, Boolean hasExtraOnion, Boolean hasBellPepper, Boolean hasExtraBellPepper){
@@ -151,6 +168,7 @@ public PizzaObject(String size, String crustType, Boolean hasMozzarella, Boolean
     public void setHasBeef(Boolean hasBeef) {
         this.hasBeef = hasBeef;
     }
+
 
     public void setHasCheddar(Boolean hasCheddar) {
         this.hasCheddar = hasCheddar;
